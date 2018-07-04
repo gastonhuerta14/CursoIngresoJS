@@ -4,8 +4,9 @@
 */
 function mostrar()
 {
-	var apellido
+	var apellido;
 	apellido=document.getElementById('elNombre').value;
+	apellido=prompt("escriba su nombre : "+apellido);
 	alert("tu apellido es : "+ apellido);
 	//prompt("escriba su nombre  :  ");
 }
