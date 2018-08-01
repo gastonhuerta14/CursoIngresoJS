@@ -1,5 +1,4 @@
-/*
-maria f 15
+/*maria f 15
 jose m 33
 pepe m 81
 
@@ -10,56 +9,67 @@ mostrar:
 4.cantidad de hombre=2
 5.nombre menor
 6.mayor
-7.hombre menor edad
+7.hombre menor edad*/
 
-*/
 function mostrar()
 {
 	var edad;
 	var sexo;
 	var nombre;
-	var contador=0;
-	var nota;
-	var promedio;
-	var notabaja;
-	var varonesmayores;
-	var varonesmenores;
-	var masjoven;
+
+	var contador = 0;
+	var cantidadmayoresedad=0;
+	var menoresdeedad=0;
+	var cantidadF=0;
+	var cantidadM=0;
+	var menoredad=0;
+	var mayoredad=0;
+	var nombredelmenor;
+	var nombredelmayor;
+	var hombremenoredad;
 
 	while(contador<3)
 	{
-		contador++;
 		nombre=prompt("ingrese nombre");
-		sexo=("ingrese sexo");
-		while(sexo!="f" || sexo!="m")
+		sexo=prompt("ingrese sexo");
+		edad=parseInt(prompt("ingrese edad"));
+
+		if (edad > 17)
 		{
-			sexo=prompt("error, ingrese sexo");
-		}
-		while(edad<0 || edad>100)
-		{
-			edad=prompt("error, ingrese edad");
-		}
-		if(edad>=18)
-		{
-			varonesmayores++;
+			edad=cantidadmayoresedad;
+			cantidadmayoresedad++;
 		} else
 		{
-			varonesmenores++;
+			edad=menoresdeedad;
+			menoresdeedad++;
+		}
+		if (sexo=="f")
+		{
+			cantidadF++;
+		}
+		if (sexo=="m")
+		{
+			cantidadM++;
+		}
+		if(edad>menoredad)
+		{
+			
+
 		}
 
 
+
+
+
+		contador++;
 
 	}
 
-	/*	document.write("<br>"promedio);
-		document.write("<br>"notabaja+sexo);
-		document.write("<br>"varonesmayores+"varones mayores sacaron mas o igual de 6");
-		document.write("<br>"masjoven);
+		document.write("<br>"+"cantidad de mayores: "+cantidadmayoresedad);
+		document.write("<br>"+"cantidad de menores: "+menoresdeedad);
+		document.write("<br>"+"cantidad de mujeres: "+cantidadF);
+		document.write("<br>"+"cantidad de hombres: "+cantidadM);
+	
 
-		if()
-		{
-			document.write("<br>");			
-		}
-*/
-
+	
 }
