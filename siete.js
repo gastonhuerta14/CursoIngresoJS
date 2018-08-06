@@ -1,4 +1,5 @@
-/*maria f 15
+/*
+maria f 15
 jose m 33
 pepe m 81
 
@@ -7,8 +8,8 @@ mostrar:
 2.menores de edad
 3.cantidad de mujeres=1
 4.cantidad de hombre=2
-5.nombre menor
-6.mayor
+5.nombre del menor
+6.nombre del mayor
 7.hombre menor edad*/
 
 function mostrar()
@@ -26,9 +27,11 @@ function mostrar()
 	var mayoredad=0;
 	var nombredelmenor;
 	var nombredelmayor;
-	var hombremenoredad;
+	var hombremenoredad=0;
 
-	while(contador<3)
+
+
+	while (contador<3)
 	{
 		nombre=prompt("ingrese nombre");
 		sexo=prompt("ingrese sexo");
@@ -36,11 +39,9 @@ function mostrar()
 
 		if (edad > 17)
 		{
-			edad=cantidadmayoresedad;
 			cantidadmayoresedad++;
 		} else
 		{
-			edad=menoresdeedad;
 			menoresdeedad++;
 		}
 		if (sexo=="f")
@@ -51,25 +52,28 @@ function mostrar()
 		{
 			cantidadM++;
 		}
-		if(edad>menoredad)
+		if ( edad>mayoredad || mayoredad==0)
 		{
-			
-
+			mayoredad=edad;
+			nombredelmayor=nombre;
 		}
-
-
-
-
-
+		if (edad<menoredad || menoredad==0)
+		{
+			menoredad=edad;
+			nombredelmenor=nombre;
+		}
+		if ((edad<menoredad && sexo=="m") || hombremenoredad==0) 
+		{
+			menoredad=edad;
+			hombremenoredad=nombre;
+		}
 		contador++;
-
 	}
-
 		document.write("<br>"+"cantidad de mayores: "+cantidadmayoresedad);
 		document.write("<br>"+"cantidad de menores: "+menoresdeedad);
 		document.write("<br>"+"cantidad de mujeres: "+cantidadF);
 		document.write("<br>"+"cantidad de hombres: "+cantidadM);
-	
-
-	
+		document.write("<br>"+"nombre del menor de edad: "+nombredelmenor);
+		document.write("<br>"+"nombre del mayor de edad: "+nombredelmayor);
+		document.write("<br>"+"nombre del hombre de menor edad: "+hombremenoredad);
 }
