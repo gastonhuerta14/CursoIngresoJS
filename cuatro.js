@@ -1,23 +1,31 @@
 function mostrar()
 {
-	var numero1;
-	var numero2;
+	var numerouno;
+	var numerodos;
+	var division;
 	var suma;
-	var resta;
-	numero1=prompt("ingrese numero uno aqui");
-	numero2=prompt("ingrese numero dos aqui");
-	suma=parseInt(numero1)/parseInt(numero2);
-	division=parseInt(numero1)-parseInt(numero2);
-	if (numero1==numero2) 
+
+	numerouno=parseInt(prompt("ingrese primer numero"));
+	numerodos=parseInt(prompt("ingrese segundo numero"));
+
+	if (numerouno==numerodos)
+	{
+		alert("numero uno "+numerouno+" y numero 2 "+numerodos+" son iguales.");
+	}
+	if (numerouno>numerodos)
+	{
+		division=numerouno/numerodos;
+		alert("numero 1 es mayor que numero 2 entonces se dividen, y la division da: "+division);
+	}
+	else
+	{
+		suma=numerouno+numerodos;
+		alert("como numero 1 no es mayor que numero 2 entonces se suman, y la suma da: "+suma);
+		if (suma<50)
 		{
-			alert(numero1+" + "+numero2+"  =  "+suma);
-		} 
-	if (numero1>numero2) 
-		{
-			alert(numero1+" / "+numero2+"  =  "+division);
-		} 
-	if (suma<50) 
-		{
-			alert("la suma es : "+suma+" y supero el 10");
+			alert("la suma es "+suma+" y es menor a 50");
 		}
+	}
+
+
 }
