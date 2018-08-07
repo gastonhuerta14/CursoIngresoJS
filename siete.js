@@ -1,79 +1,82 @@
-/*
-maria f 15
-jose m 33
-pepe m 81
-
-mostrar: 
-1.cantidad de mayores de edad
-2.menores de edad
-3.cantidad de mujeres=1
-4.cantidad de hombre=2
-5.nombre del menor
-6.nombre del mayor
-7.hombre menor edad*/
-
 function mostrar()
 {
+	var nota;
 	var edad;
 	var sexo;
-	var nombre;
-
 	var contador = 0;
-	var cantidadmayoresedad=0;
-	var menoresdeedad=0;
-	var cantidadF=0;
-	var cantidadM=0;
-	var menoredad=0;
-	var mayoredad=0;
-	var nombredelmenor;
-	var nombredelmayor;
-	var hombremenoredad=0;
+	var cantidadnotas = 0;
+	var sumanotas=0;
+	var promedionotas;
+	var notabaja;
+	var sexonotabaja;
+	var masjoven=0;
+	var notajoven=0;
+	var sexojoven;
+	var edadprimeramujer;
+	var notaprimeramujer;
+	var cantidadvaronesmayoresaprobados=0;
+	var cantidadmujeres=0;
 
+	var flag=0;
+	var flag2=0;
+	var primeramujer=0;
 
-
-	while (contador<3)
+	while (contador<5)
 	{
-		nombre=prompt("ingrese nombre");
-		sexo=prompt("ingrese sexo");
-		edad=parseInt(prompt("ingrese edad"));
-
-		if (edad > 17)
-		{
-			cantidadmayoresedad++;
-		} else
-		{
-			menoresdeedad++;
-		}
-		if (sexo=="f")
-		{
-			cantidadF++;
-		}
-		if (sexo=="m")
-		{
-			cantidadM++;
-		}
-		if ( edad>mayoredad || mayoredad==0)
-		{
-			mayoredad=edad;
-			nombredelmayor=nombre;
-		}
-		if (edad<menoredad || menoredad==0)
-		{
-			menoredad=edad;
-			nombredelmenor=nombre;
-		}
-		if ((edad<menoredad && sexo=="m") || hombremenoredad==0) 
-		{
-			menoredad=edad;
-			hombremenoredad=nombre;
-		}
-		contador++;
+	nota=parseInt(prompt("ingrese nota"));
+	while (nota<0 || nota>10)
+	{
+		nota=parseInt(prompt("Reingrese nota"));
 	}
-		document.write("<br>"+"cantidad de mayores: "+cantidadmayoresedad);
-		document.write("<br>"+"cantidad de menores: "+menoresdeedad);
-		document.write("<br>"+"cantidad de mujeres: "+cantidadF);
-		document.write("<br>"+"cantidad de hombres: "+cantidadM);
-		document.write("<br>"+"nombre del menor de edad: "+nombredelmenor);
-		document.write("<br>"+"nombre del mayor de edad: "+nombredelmayor);
-		document.write("<br>"+"nombre del hombre de menor edad: "+hombremenoredad);
+	edad=parseInt(prompt("ingrese edad"));
+	sexo=prompt("ingrese sexo");
+	while (!(sexo=="f" || sexo=="m"))
+	{
+		sexo=prompt("Reingrese sexo");
+	}
+	
+	cantidadnotas++;
+	sumanotas=sumanotas+nota;
+	if (nota<notabaja || flag==0)
+	{
+		notabaja=nota;
+		sexonotabaja=sexo;
+		flag=1;
+	}
+	if (sexo=="m" && edad>=18 && nota>=6)
+	{
+		cantidadvaronesmayoresaprobados++;
+	}
+	if (edad<masjoven || flag2==0)
+	{
+		masjoven=edad;
+		notajoven=nota;
+		sexojoven=sexo;
+		flag2=1;
+	}
+	if (sexo=="f" && primeramujer==0)
+	{
+		edadprimeramujer=edad;
+		notaprimeramujer=nota;
+		alert("La edad y la nota de la primera mujer es "+edadprimeramujer+" y la nota es "+notaprimeramujer);
+		primeramujer=1;
+	}
+	if(sexo=="f")
+	{
+	cantidadmujeres++;
+	if (sexo=="f" && cantidadmujeres==0)
+	{
+		alert("no hubo ninguna mujer.");
+	}
+	}
+	contador++;
+	}
+
+	promedionotas=sumanotas/cantidadnotas;
+	alert("el promedio de las notas es: "+promedionotas);
+	alert("la nota mas baja y el sexo de esa persona es "+notabaja+" y el sexo es "+sexonotabaja);
+	alert("La cantidad de varones mayores a 18, que su nota haya sido mayor o igual a 6 es: "+cantidadvaronesmayoresaprobados);
+	alert("el sexo y la nota del mas joven es "+sexojoven+" y la nota es "+notajoven);
+
+
 }

@@ -1,6 +1,6 @@
 function mostrar()
 {
-	var letra;
+		var letra;
 	var numero;
 	var respuesta = "s";
 
@@ -70,5 +70,6 @@ function mostrar()
 	document.write("<br>"+"El promedio de todos los números positivos ingresados: "+promedio);
 	document.write("<br>"+"La suma de todos los números negativos: "+sumanegativos);
 	document.write("<br>"+"El número y la letra del mínimo: "+numerominimo+" y "+letraminimo);
-	document.write("<br>"+"El número y la letra del máximo: "+numeromaximo+" y "+letramaximo);
+	document.write("<br>"+"El número y la letra del máximo: "+numeromaximo+" y "+letramaximo);		
+
 }
